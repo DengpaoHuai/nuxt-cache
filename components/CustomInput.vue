@@ -1,18 +1,15 @@
 <script setup lang="ts">
-
 const props = defineProps<{
-    name: string;
-    label: string;
+  name: string;
+  label: string;
 }>();
 
 const { value, errorMessage } = useField(() => props.name);
-
 </script>
 
 <template>
-    <label>
-        {{ props.label }}
-    </label>
-  <UInput v-model="(value as string)" />
+  <label>
+    {{ props.label }}
+  </label>
   <div v-if="errorMessage">{{ errorMessage }}</div>
 </template>
